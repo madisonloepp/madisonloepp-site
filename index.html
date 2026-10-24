@@ -7,6 +7,8 @@
 <meta property="og:title" content="Madison Loepp | Motorsports Marketing &amp; PR">
 <meta property="og:description" content="Marketing, PR, and sponsorship across NASCAR, ARCA, NHRA, USAC, rally, and American Flat Track.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://madisonloepp.com/">
+<meta property="og:image" content="https://madisonloepp.com/img/pit-stop-sunset.jpg">
 <meta name="theme-color" content="#0c0a0a">
 <title>Madison Loepp | Motorsports Marketing &amp; PR</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -158,7 +160,8 @@ dl { margin: 0; }
 .plist span:hover { color: var(--cream); }
 
 /* reel */
-.reel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
+.reel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, .316fr); gap: 20px; align-items: start; }
+.reel .vert video { aspect-ratio: 9 / 16; }
 .reel figure { margin: 0; display: grid; gap: 14px; }
 .reel video { width: 100%; max-width: 100%; aspect-ratio: 16 / 9; background: #000; display: block; }
 .reel figcaption { font: 600 .82rem/1 var(--cond); letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
@@ -169,9 +172,9 @@ dl { margin: 0; }
 .shot.w6 { grid-column: span 6; }
 .shot.w8 { grid-column: span 8; }
 .shot.tall { grid-row: span 3; }
-.shot img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.82) contrast(1.06); transition: transform .9s cubic-bezier(.2,.7,.1,1), filter .4s; }
+.shot img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s cubic-bezier(.2,.7,.1,1); }
 .shot::after { content: ""; position: absolute; inset: 0; border: 0 solid var(--red); transition: border-width .2s; }
-.shot:hover img, .shot:focus-visible img { transform: scale(1.05); filter: none; }
+.shot:hover img, .shot:focus-visible img { transform: scale(1.05); }
 .shot:hover::after, .shot:focus-visible::after { border-width: 3px; }
 .lightbox { border: 0; padding: 0; background: transparent; max-width: min(94vw, 1200px); max-height: 94vh; }
 .lightbox::backdrop { background: color-mix(in srgb, var(--black) 94%, transparent); }
@@ -229,6 +232,7 @@ footer a { text-decoration: none; }
   .head, .about, .split, .spread { grid-template-columns: minmax(0, 1fr); }
   .spread.flip .frame { order: 0; }
   .reel { grid-template-columns: minmax(0, 1fr); }
+  .reel .vert { width: min(100%, 320px); justify-self: center; }
   .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 150px; gap: 8px; }
   .shot, .shot.w6, .shot.w8 { grid-column: span 1; grid-row: span 2; }
   .shot.wide-m { grid-column: span 2; }
@@ -459,11 +463,12 @@ footer a { text-decoration: none; }
     <div class="wrap">
       <div class="head reveal">
         <div><p class="eyebrow">Marketing Reel</p><h2>Race <em>promos.</em></h2></div>
-        <p class="lead">Promotional spots produced to drive ticket sales and attendance. Press play for sound.</p>
+        <p class="lead">Promotional spots and social content produced to drive ticket sales, attendance, and engagement. Press play for sound.</p>
       </div>
       <div class="reel reveal">
         <figure><video controls muted playsinline preload="metadata" poster="video/reel-1.jpg"><source src="video/reel-1.mp4" type="video/mp4"></video><figcaption>Promo · 0:14</figcaption></figure>
         <figure><video controls muted playsinline preload="metadata" poster="video/reel-2.jpg"><source src="video/reel-2.mp4" type="video/mp4"></video><figcaption>Promo · 0:20</figcaption></figure>
+        <figure class="vert"><video controls muted playsinline preload="metadata" poster="video/reel-3.jpg"><source src="video/reel-3.mp4" type="video/mp4"></video><figcaption>Social · 0:11</figcaption></figure>
       </div>
     </div>
   </section>
@@ -490,6 +495,15 @@ footer a { text-decoration: none; }
         <button type="button" class="shot"><img src="img/barstool-stage.jpg" alt="Madison at the Barstool College Football Show set in Knoxville" loading="lazy" style="object-position:50% 35%"></button>
         <button type="button" class="shot"><img src="img/barstool-portnoy.jpg" alt="Madison and the Barstool Sports staff with Dave Portnoy at Tennessee vs. Florida" loading="lazy" style="object-position:50% 30%"></button>
         <button type="button" class="shot wide-m"><img src="img/mikes-bristol.jpg" alt="Madison working the Mike&rsquo;s Hard Lemonade activation at Country Thunder, Bristol Motor Speedway" loading="lazy" style="object-position:50% 40%"></button>
+        <button type="button" class="shot w8 wide-m"><img src="img/arca-93-side.jpg" alt="The No. 93 ARCA Menards Series car at speed" loading="lazy" style="object-position:50% 55%"></button>
+        <button type="button" class="shot"><img src="img/newport-victory-lane.jpg" alt="Madison with drivers at the Newport Speedway victory lane sign" loading="lazy" style="object-position:50% 45%"></button>
+        <button type="button" class="shot"><img src="img/aft-mission.jpg" alt="An American Flat Track rider on the grid" loading="lazy" style="object-position:40% 40%"></button>
+        <button type="button" class="shot"><img src="img/wilson-jacket.jpg" alt="Custom jacket lining on the grid at the Coca-Cola 600" loading="lazy" style="object-position:40% 50%"></button>
+        <button type="button" class="shot"><img src="img/aft-monster.jpg" alt="An American Flat Track rider in a Monster Energy helmet" loading="lazy" style="object-position:50% 35%"></button>
+        <button type="button" class="shot w6 wide-m"><img src="img/arca-pink-edit.jpg" alt="The No. 03 ARCA Menards Series car with a pixel-stretch graphic edit" loading="lazy" style="object-position:55% 60%"></button>
+        <button type="button" class="shot w6 wide-m"><img src="img/dirt-late-model.jpg" alt="A dirt late model sliding through the turn at night" loading="lazy" style="object-position:50% 50%"></button>
+        <button type="button" class="shot w8"><img src="img/arca-93-driver.jpg" alt="An ARCA driver leaning on his car on pit road before the race" loading="lazy" style="object-position:55% 40%"></button>
+        <button type="button" class="shot"><img src="img/driver-chat.jpg" alt="Madison talking with a driver on pit road" loading="lazy" style="object-position:50% 35%"></button>
       </div>
     </div>
   </section>
