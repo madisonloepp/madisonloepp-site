@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Madison Loepp: motorsports marketing and public relations. Director of Marketing &amp; PR at Newport Speedway, based in Knoxville, TN.">
+<meta property="og:title" content="Madison Loepp | Motorsports Marketing &amp; PR">
+<meta property="og:description" content="Marketing, PR, and sponsorship across NASCAR, ARCA, NHRA, USAC, rally, and American Flat Track.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0c0a0a">
+<title>Madison Loepp | Motorsports Marketing &amp; PR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Barlow+Condensed:wght@500;600;700;800&family=Archivo:wght@400;500;600&display=swap">
+<style>
+/* Layout: a night-race broadcast package. Full-bleed cinematic opener, square-cut editorial spreads, condensed timing-board labels against a luxury serif. */
+:root {
+  --black: #0c0a0a;
+  --carbon: #151212;
+  --carbon-2: #1d1818;
+  --oxblood: #4a0b0e;
+  --red: #b3181e;
+  --cream: #f1e9e1;
+  --muted: #a99d95;
+  --line: #2c2424;
+  --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --cond: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --gl: max(20px, env(safe-area-inset-left, 0px));
+  --gr: max(20px, env(safe-area-inset-right, 0px));
+  --max: 1240px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+body { background: var(--black); color: var(--cream); font: 400 17px/1.7 var(--body); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 52; background: var(--black); }
+a { color: inherit; }
+img { display: block; }
+:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+.wrap { max-width: var(--max); margin: 0 auto; padding-left: var(--gl); padding-right: var(--gr); }
+.eyebrow { display: flex; align-items: center; gap: 14px; font: 700 .8rem/1 var(--cond); letter-spacing: .28em; text-transform: uppercase; color: var(--red); }
+.eyebrow::before { content: ""; width: 32px; height: 2px; background: var(--red); }
+h1, h2, h3 { margin: 0; font-weight: 400; text-wrap: balance; }
+h2 { font: 400 clamp(2.6rem, 5.6vw, 4.8rem)/1.02 var(--display); letter-spacing: -.01em; }
+h2 em { font-style: italic; color: var(--muted); }
+p { margin: 0; }
+.lead { font-size: 1.12rem; color: var(--muted); max-width: 54ch; }
+
+/* ---------- menu ---------- */
+.nav { position: fixed; top: env(safe-area-inset-top, 0px); left: 0; right: 0; z-index: 50; transition: background .35s, border-color .35s; border-bottom: 1px solid transparent; }
+.nav.solid { background: color-mix(in srgb, var(--black) 88%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-color: var(--line); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 76px; }
+.mark { text-decoration: none; font: 800 1.15rem/1 var(--cond); letter-spacing: .32em; text-transform: uppercase; display: flex; gap: .5em; }
+.mark span { color: var(--red); }
+.links { display: flex; align-items: center; gap: 2px; list-style: none; margin: 0; padding: 0; }
+.links a { display: block; padding: 10px 12px; text-decoration: none; font: 600 .88rem/1 var(--cond); letter-spacing: .2em; text-transform: uppercase; color: color-mix(in srgb, var(--cream) 72%, transparent); position: relative; transition: color .2s; }
+.links a::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: 2px; height: 2px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
+.links a:hover, .links a.on { color: var(--cream); }
+.links a:hover::after, .links a.on::after { transform: scaleX(1); }
+.links .cta a { margin-left: 10px; padding: 13px 18px; border: 1px solid var(--cream); color: var(--cream); }
+.links .cta a::after { display: none; }
+.links .cta a:hover { background: var(--cream); color: var(--black); }
+.burger { display: none; background: none; border: 1px solid color-mix(in srgb, var(--cream) 40%, transparent); color: var(--cream); width: 46px; height: 46px; cursor: pointer; }
+.burger span { display: block; width: 18px; height: 2px; background: currentColor; margin: 4px auto; transition: transform .25s, opacity .25s; }
+.progress { position: absolute; left: 0; bottom: -1px; height: 2px; width: 100%; background: var(--red); transform-origin: left; transform: scaleX(0); }
+
+/* ---------- opener ---------- */
+.hero { position: relative; min-height: min(92vh, 900px); display: grid; align-items: end; overflow: hidden; isolation: isolate; }
+.hero video, .hero .poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; filter: saturate(.7) contrast(1.1); }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background:
+  linear-gradient(90deg, color-mix(in srgb, var(--black) 92%, transparent) 0%, color-mix(in srgb, var(--black) 55%, transparent) 55%, color-mix(in srgb, var(--black) 20%, transparent) 100%),
+  linear-gradient(0deg, var(--black) 0%, transparent 45%),
+  linear-gradient(180deg, color-mix(in srgb, var(--black) 70%, transparent), transparent 22%); }
+.hero .wrap { width: 100%; padding-block: 140px 72px; display: grid; gap: 28px; }
+.hero .eyebrow { color: var(--cream); }
+.hero h1 { font: 400 clamp(3.6rem, 10.5vw, 9.4rem)/.9 var(--display); letter-spacing: -.02em; animation: up 1.1s cubic-bezier(.2,.7,.1,1) both; }
+.hero h1 em { display: block; font-style: italic; color: var(--cream); }
+.hero h1 b { font-weight: 400; color: var(--red); }
+.hero .role { font: 600 clamp(1rem, 1.6vw, 1.25rem)/1.4 var(--cond); letter-spacing: .22em; text-transform: uppercase; color: var(--cream); animation: up 1.1s .12s cubic-bezier(.2,.7,.1,1) both; }
+.hero .role span { color: var(--muted); }
+.hero .lead { color: color-mix(in srgb, var(--cream) 78%, transparent); animation: up 1.1s .2s cubic-bezier(.2,.7,.1,1) both; }
+@keyframes up { from { transform: translateY(26px); } to { transform: none; } }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 52px; padding: 0 26px; text-decoration: none; border: 1px solid var(--cream); background: none; color: var(--cream); font: 700 .92rem/1 var(--cond); letter-spacing: .22em; text-transform: uppercase; cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
+.btn.red { background: var(--red); border-color: var(--red); }
+.btn:hover { background: var(--cream); border-color: var(--cream); color: var(--black); }
+.btn .arrow { transition: transform .25s; }
+.btn:hover .arrow { transform: translateX(4px); }
+.scroll-cue { position: absolute; right: var(--gr); bottom: 72px; font: 600 .75rem/1 var(--cond); letter-spacing: .3em; text-transform: uppercase; color: var(--muted); writing-mode: vertical-rl; display: flex; align-items: center; gap: 14px; }
+.scroll-cue::after { content: ""; width: 1px; height: 64px; background: linear-gradient(var(--cream), transparent); animation: cue 2.2s ease-in-out infinite; transform-origin: top; }
+@keyframes cue { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
+
+/* ---------- credentials bar ---------- */
+.creds-bar { border-block: 1px solid var(--line); background: var(--carbon); }
+.creds-bar .wrap { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.stat { padding-block: 34px; padding-right: 24px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.stat + .stat { border-left: 1px solid var(--line); padding-left: 28px; }
+.stat b { font: 500 clamp(1.6rem, 2.6vw, 2.3rem)/1.05 var(--display); }
+.stat small { font: 600 .8rem/1.35 var(--cond); letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+
+/* ---------- sections ---------- */
+section { scroll-margin-top: 76px; }
+.band { padding-block: clamp(84px, 11vw, 150px); }
+.band.carbon { background: var(--carbon); }
+.head { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 24px 64px; align-items: end; margin-bottom: clamp(44px, 6vw, 80px); }
+.head > div { display: grid; gap: 20px; }
+
+/* about */
+.about { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(36px, 7vw, 104px); align-items: center; }
+.frame { position: relative; overflow: hidden; background: var(--carbon-2); }
+.frame img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.85) contrast(1.06); transition: transform 1.2s cubic-bezier(.2,.7,.1,1), filter .5s; }
+.frame:hover img { transform: scale(1.03); filter: none; }
+.about .frame { aspect-ratio: 4 / 5; max-width: 100%; }
+.about .frame::after { content: ""; position: absolute; left: 0; bottom: 0; width: 38%; height: 6px; background: var(--red); }
+.about-copy { display: grid; gap: 22px; min-width: 0; }
+.about-copy p { max-width: 60ch; color: color-mix(in srgb, var(--cream) 86%, transparent); }
+.quote { font: 400 italic clamp(1.7rem, 3vw, 2.4rem)/1.2 var(--display); color: var(--cream); padding-top: 22px; border-top: 1px solid var(--line); }
+.roles { display: flex; flex-wrap: wrap; gap: 6px 22px; margin-top: 6px; }
+.roles span { font: 600 .82rem/1.8 var(--cond); letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+
+/* experience */
+.timeline { border-top: 1px solid var(--cream); }
+.job { display: grid; grid-template-columns: 180px minmax(0, 1.1fr) minmax(0, 1fr); gap: 16px 48px; padding-block: 40px; border-bottom: 1px solid var(--line); transition: background .3s; }
+.job:hover { background: linear-gradient(90deg, color-mix(in srgb, var(--red) 9%, transparent), transparent 70%); }
+.job .kind { font: 700 .8rem/1.6 var(--cond); letter-spacing: .26em; text-transform: uppercase; color: var(--red); }
+.job h3 { font: 400 clamp(1.6rem, 2.4vw, 2.1rem)/1.12 var(--display); }
+.job h3 small { display: block; margin-top: 8px; font: 600 .95rem/1.3 var(--cond); letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+.job ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; min-width: 0; }
+.job li { padding-left: 22px; position: relative; color: color-mix(in srgb, var(--cream) 82%, transparent); }
+.job li::before { content: ""; position: absolute; left: 0; top: .78em; width: 10px; height: 1px; background: var(--red); }
+
+/* case studies as spreads */
+.spread { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(32px, 6vw, 88px); align-items: center; padding-block: clamp(40px, 5vw, 64px); }
+.spread + .spread { border-top: 1px solid var(--line); }
+.spread.flip .frame { order: 2; }
+.spread .frame { aspect-ratio: 3 / 2; max-width: 100%; }
+.spread .frame.contain { background: var(--black); }
+.spread .frame.contain img.bg { position: absolute; inset: 0; filter: blur(26px) brightness(.4) saturate(.8); transform: scale(1.2); }
+.spread .frame.contain img.fg { position: relative; object-fit: contain; filter: none; }
+.spread .frame.contain:hover img.fg { transform: none; }
+.spread-copy { display: grid; gap: 20px; min-width: 0; }
+.spread-copy h3 { font: 400 clamp(2rem, 3.4vw, 3rem)/1.05 var(--display); }
+.facts { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.facts div { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 16px; padding-block: 14px; border-bottom: 1px solid var(--line); }
+.facts dt { font: 700 .76rem/1.7 var(--cond); letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
+.facts dd { margin: 0; }
+.facts .result dd { color: var(--cream); font-weight: 600; }
+dl { margin: 0; }
+
+/* partners */
+.partners { margin-top: clamp(56px, 7vw, 96px); display: grid; gap: 26px; }
+.partners .eyebrow { justify-content: center; }
+.partners .eyebrow::before { display: none; }
+.plist { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px 40px; }
+.plist span { font: 400 clamp(1.15rem, 1.8vw, 1.5rem)/1.3 var(--display); color: var(--muted); transition: color .2s; }
+.plist span:hover { color: var(--cream); }
+
+/* reel */
+.reel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
+.reel figure { margin: 0; display: grid; gap: 14px; }
+.reel video { width: 100%; max-width: 100%; aspect-ratio: 16 / 9; background: #000; display: block; }
+.reel figcaption { font: 600 .82rem/1 var(--cond); letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
+
+/* gallery */
+.gallery { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-auto-rows: clamp(120px, 14vw, 190px); gap: 10px; }
+.shot { position: relative; padding: 0; border: 0; background: var(--carbon-2); cursor: zoom-in; overflow: hidden; grid-column: span 4; grid-row: span 2; }
+.shot.w6 { grid-column: span 6; }
+.shot.w8 { grid-column: span 8; }
+.shot.tall { grid-row: span 3; }
+.shot img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.82) contrast(1.06); transition: transform .9s cubic-bezier(.2,.7,.1,1), filter .4s; }
+.shot::after { content: ""; position: absolute; inset: 0; border: 0 solid var(--red); transition: border-width .2s; }
+.shot:hover img, .shot:focus-visible img { transform: scale(1.05); filter: none; }
+.shot:hover::after, .shot:focus-visible::after { border-width: 3px; }
+.lightbox { border: 0; padding: 0; background: transparent; max-width: min(94vw, 1200px); max-height: 94vh; }
+.lightbox::backdrop { background: color-mix(in srgb, var(--black) 94%, transparent); }
+.lightbox img { max-width: 100%; max-height: 84vh; margin: 0 auto; }
+.lightbox .btn { display: flex; margin: 16px auto 0; }
+
+/* credentials */
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(40px, 7vw, 104px); }
+.split h3 { font: 400 1.9rem/1.1 var(--display); margin: 18px 0 26px; }
+.tools { display: flex; flex-wrap: wrap; gap: 8px; }
+.tools span { font: 500 .9rem/1 var(--body); padding: 11px 14px; border: 1px solid var(--line); color: color-mix(in srgb, var(--cream) 85%, transparent); }
+.edu { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.edu div { padding-block: 18px; border-bottom: 1px solid var(--line); display: grid; gap: 4px; }
+.edu b { font: 400 1.2rem/1.3 var(--display); }
+.edu small { color: var(--muted); font-size: .95rem; }
+
+/* contact */
+.contact { position: relative; overflow: hidden; isolation: isolate; text-align: left; }
+.contact .bgimg { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; filter: saturate(.6) brightness(.5); }
+.contact::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, var(--black) 10%, color-mix(in srgb, var(--black) 75%, transparent) 60%, color-mix(in srgb, var(--oxblood) 60%, transparent)); }
+.contact h2 { font-size: clamp(3rem, 8vw, 7rem); line-height: .95; }
+.contact h2 em { color: var(--red); }
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 56px; max-width: 980px; }
+.card { background: color-mix(in srgb, var(--black) 88%, transparent); padding: 26px; display: grid; gap: 12px; min-width: 0; }
+.card .k { font: 700 .78rem/1 var(--cond); letter-spacing: .24em; text-transform: uppercase; color: var(--muted); }
+.card output { font: 400 1.3rem/1.3 var(--display); overflow-wrap: anywhere; user-select: all; }
+.card .btn { justify-self: start; min-height: 42px; padding: 0 16px; font-size: .8rem; }
+footer { border-top: 1px solid var(--line); padding-block: 28px; font: 600 .8rem/1.5 var(--cond); letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+footer a { text-decoration: none; }
+
+/* entrance: content is visible at rest; items below the fold lift in */
+.reveal { transition: transform .9s cubic-bezier(.2,.7,.1,1), opacity .9s; }
+.reveal.pending { transform: translateY(30px); opacity: .3; }
+
+/* ---------- tablet & phone ---------- */
+@media (max-width: 960px) {
+  .job { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .creds-bar .wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat:nth-child(3) { border-left: 0; padding-left: 0; }
+  .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+}
+@media (max-width: 860px) {
+  .burger { display: block; }
+  .links { position: fixed; inset: calc(76px + env(safe-area-inset-top, 0px)) 0 auto; flex-direction: column; align-items: stretch; gap: 0; background: var(--black); border-bottom: 1px solid var(--line); padding: 8px var(--gr) 22px var(--gl); opacity: 0; transform: translateY(-8px); pointer-events: none; transition: opacity .2s, transform .2s; }
+  .nav.open { background: var(--black); }
+  .nav.open .links { opacity: 1; transform: none; pointer-events: auto; }
+  .links a { padding: 16px 0; font-size: 1.05rem; }
+  .links a::after { left: 0; right: auto; width: 36px; }
+  .links .cta a { margin: 12px 0 0; padding: 16px; text-align: center; }
+  .nav.open .burger span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .nav.open .burger span:nth-child(2) { opacity: 0; }
+  .nav.open .burger span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  .scroll-cue { display: none; }
+  .head, .about, .split, .spread { grid-template-columns: minmax(0, 1fr); }
+  .spread.flip .frame { order: 0; }
+  .reel { grid-template-columns: minmax(0, 1fr); }
+  .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 150px; gap: 8px; }
+  .shot, .shot.w6, .shot.w8 { grid-column: span 1; grid-row: span 2; }
+  .shot.wide-m { grid-column: span 2; }
+  .cards { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 520px) {
+  .creds-bar .wrap { grid-template-columns: minmax(0, 1fr); }
+  .stat + .stat { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); }
+  .facts div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Madison Loepp, back to top">Madison <span>Loepp</span></a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="links" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <ul class="links" id="links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#reel">Reel</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li class="cta"><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+  <div class="progress" id="progress"></div>
+</nav>
+
+<header class="hero" id="top">
+  <img class="poster" src="video/reel-2.jpg" alt="">
+  <video autoplay muted loop playsinline preload="auto" poster="video/reel-2.jpg" aria-hidden="true"><source src="video/hero-loop.mp4" type="video/mp4"></video>
+  <div class="wrap">
+    <p class="eyebrow">Motorsports Marketing &amp; Public Relations</p>
+    <h1>Madison<em>Loepp<b>.</b></em></h1>
+    <p class="role">Director of Marketing &amp; PR <span>/</span> Newport Speedway</p>
+    <p class="lead">Motorsports marketing and communications strategist building audiences, sponsor value, and race-day experiences across NASCAR, ARCA, NHRA, rally, and American Flat Track.</p>
+    <div class="actions">
+      <a class="btn red" href="#work">View selected work <span class="arrow">→</span></a>
+      <a class="btn" href="#contact">Get in touch</a>
+    </div>
+  </div>
+  <span class="scroll-cue" aria-hidden="true">Scroll</span>
+</header>
+
+<div class="creds-bar" aria-label="Highlights">
+  <div class="wrap">
+    <div class="stat"><b>Sold out</b><small>Newport Speedway&rsquo;s revival, from junkyard to sold-out grandstands</small></div>
+    <div class="stat"><b>Kevin Harvick</b><small>Secured as grand marshal for the ASA STARS National Tour at Newport</small></div>
+    <div class="stat"><b>11 series</b><small>Series and sanctioning bodies: NASCAR · ARCA Menards · CARS Tour · ASA STARS · USAC · NHRA · American Flat Track · WRC · FIA · American Rally Association · Rally USA</small></div>
+    <div class="stat"><b>9 partners</b><small>Brand partners and clients across motorsports, hospitality, and community organizations</small></div>
+  </div>
+</div>
+
+<main>
+  <section class="band" id="about">
+    <div class="wrap about">
+      <div class="frame reveal"><img src="img/pitroad.jpg" alt="Madison on pit road with a team headset and credential" loading="lazy"></div>
+      <div class="about-copy reveal">
+        <p class="eyebrow">About</p>
+        <h2>Strategy, executed <em>at the track.</em></h2>
+        <p>I am a motorsports marketing and public relations professional whose work spans venue leadership, team and driver representation, series activation, and brand development. My experience covers NASCAR, ARCA, NHRA, rally, and short-track racing. As Director of Marketing &amp; PR at Newport Speedway and founder of Octane Influence, I have led a venue revival, built sponsorship pipelines, and developed brand audiences from the ground up.</p>
+        <p>My academic training in social work, with degrees from the University of Tennessee and King University, informs how I approach fans. It gives me a grounded understanding of community behavior and audience psychology, and of what earns lasting loyalty. That perspective is uncommon in motorsports marketing, and it shapes every program I build.</p>
+        <p class="quote">I do not build campaigns. I build belonging.</p>
+        <div class="roles" aria-label="Roles I've held">
+          <span>Marketing Director</span><span>PR Director</span><span>Track Promoter</span><span>Field Marketer</span><span>Sponsorship Manager</span><span>Events Director</span><span>Social Media Manager</span><span>Sports Sales</span><span>Talent Agent</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band carbon" id="experience">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><p class="eyebrow">Experience</p><h2>Across the <em>paddock.</em></h2></div>
+        <p class="lead">Venue, team, agency, driver, series, brand, and media roles, giving me a working view of how every stakeholder in the sport creates value.</p>
+      </div>
+      <div class="timeline">
+        <article class="job reveal">
+          <span class="kind">Track</span>
+          <h3>Director of Marketing &amp; PR<small>Newport Speedway · Newport, TN</small></h3>
+          <ul>
+            <li>Directed the marketing and communications strategy for the track&rsquo;s return after seven dormant years and a full junkyard cleanup, building to sold-out events</li>
+            <li>Led public relations for the ASA STARS National Tour event, featuring NASCAR champion Kevin Harvick as grand marshal</li>
+            <li>Developed and secured sponsorship partnerships across multiple racing divisions</li>
+          </ul>
+        </article>
+        <article class="job reveal">
+          <span class="kind">Agency</span>
+          <h3>Founder<small>Octane Influence</small></h3>
+          <ul>
+            <li>Founded a motorsports marketing agency and built its brand identity, positioning, and content systems</li>
+            <li>Designed sponsorship and content frameworks tailored to motorsports clients</li>
+          </ul>
+        </article>
+        <article class="job reveal">
+          <span class="kind">Driver</span>
+          <h3>Driver Marketing<small>Chad Finchum · NASCAR</small></h3>
+          <ul>
+            <li>Developed sponsorship proposals and pitch materials to support corporate partner acquisition</li>
+          </ul>
+        </article>
+        <article class="job reveal">
+          <span class="kind">Rider</span>
+          <h3>Social Media Content<small>Jared Mees · American Flat Track · Ongoing</small></h3>
+          <ul>
+            <li>Create ongoing social media content for nine-time American Flat Track Grand National Champion Jared Mees, building his digital presence with fans and partners</li>
+          </ul>
+        </article>
+        <article class="job reveal">
+          <span class="kind">Crown Jewel</span>
+          <h3>Coca-Cola 600<small>With William Wilson · NASCAR Cup Series · Charlotte Motor Speedway</small></h3>
+          <ul>
+            <li>Partnered with William Wilson, designer of the custom jackets presented to race winners, at NASCAR&rsquo;s longest race</li>
+            <li>Supported race day activities and victory lane preparations, and produced media and content, including in The Speedway Club at Charlotte Motor Speedway</li>
+          </ul>
+        </article>
+        <article class="job reveal">
+          <span class="kind">Team</span>
+          <h3>Field Marketer<small>Ron Capps Motorsports · NHRA · Contract</small></h3>
+          <ul>
+            <li>Represented the NHRA Funny Car team in a contracted field marketing role, engaging fans and partners at the track</li>
+          </ul>
+        </article>
+        <article class="job reveal">
+          <span class="kind">Series</span>
+          <h3>Track Promoter &amp; Brand Representative<small>American Flat Track · DuQuoin Mile</small></h3>
+          <ul>
+            <li>Represented the series and its partner brands on track and on the podium</li>
+            <li>Executed trophy ceremonies, the pole award presentation, and on-track number board operations</li>
+          </ul>
+        </article>
+        <article class="job reveal">
+          <span class="kind">Brand</span>
+          <h3>Brand Representative<small>Lag Shot Golf · PGA Show</small></h3>
+          <ul>
+            <li>Led live product demonstrations for buyers, media, and attendees at golf&rsquo;s largest industry trade show</li>
+            <li>Supported trade show activations and booth engagement on behalf of the brand</li>
+          </ul>
+        </article>
+        <article class="job reveal">
+          <span class="kind">Media</span>
+          <h3>Activations &amp; Marketing<small>Barstool Sports · Barstool College Football Show · Tennessee vs. Florida</small></h3>
+          <ul>
+            <li>Ran and supported on-site activations and marketing alongside Dave Portnoy and the Barstool Sports team</li>
+            <li>Delivered fan engagement at a live national broadcast for one of college football&rsquo;s biggest rivalry games</li>
+          </ul>
+        </article>
+        <article class="job reveal">
+          <span class="kind">Activation</span>
+          <h3>Brand Activation<small>Mike&rsquo;s Hard Lemonade · Country Thunder · Bristol Motor Speedway</small></h3>
+          <ul>
+            <li>Staffed the brand&rsquo;s on-site activation at a major country music festival hosted at Bristol Motor Speedway</li>
+            <li>Engaged festival guests and drove product awareness for Mike&rsquo;s Hard Lemonade Seltzer</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="work">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><p class="eyebrow">Selected Work</p><h2>Case <em>studies.</em></h2></div>
+        <p class="lead">Each project is framed by the challenge, my approach, and the outcome.</p>
+      </div>
+
+      <article class="spread reveal">
+        <div class="frame"><img src="img/newport-crowd.jpg" alt="Packed grandstands at Newport Speedway on race day" loading="lazy" style="object-position:30% 50%"></div>
+        <div class="spread-copy">
+          <p class="eyebrow">Newport Speedway</p>
+          <h3>From junkyard to <em>sold out</em></h3>
+          <dl class="facts">
+            <div><dt>Challenge</dt><dd>Newport Speedway, a 3/10-mile oval with 26-degree banking, had been dormant since its final race in November 2017. When new ownership acquired the property in 2024, crews had to remove hundreds of tons of scrap vehicles and metal from what had become a junkyard before racing could resume. The task was to restore East Tennessee&rsquo;s confidence in the venue.</dd></div>
+            <div><dt>What I did</dt><dd>Directed the relaunch marketing and communications strategy and built a sponsorship program spanning multiple divisions.</dd></div>
+            <div class="result"><dt>Result</dt><dd>Sold-out events at a venue that had sat dormant for seven years.</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="spread flip reveal">
+        <div class="frame contain"><img class="bg" src="img/asa-stars-graphic.jpg" alt="" aria-hidden="true"><img class="fg" src="img/asa-stars-graphic.jpg" alt="ASA STARS National Tour July 25th race graphic for Newport Speedway, designed by Madison" loading="lazy"></div>
+        <div class="spread-copy">
+          <p class="eyebrow">ASA STARS National Tour</p>
+          <h3>A national tour comes to Newport</h3>
+          <dl class="facts">
+            <div><dt>Challenge</dt><dd>Position a national touring series date as the premier event of the season.</dd></div>
+            <div><dt>What I did</dt><dd>Led event public relations with NASCAR champion Kevin Harvick as grand marshal, and designed the event creative shown here.</dd></div>
+            <div class="result"><dt>Result</dt><dd>National attention and a marquee name for a regional short track.</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="spread reveal">
+        <div class="frame"><img src="img/driver-entry.jpg" alt="A driver climbing into his car before a race" loading="lazy"></div>
+        <div class="spread-copy">
+          <p class="eyebrow">Chad Finchum · NASCAR</p>
+          <h3>Sponsorship strategy</h3>
+          <dl class="facts">
+            <div><dt>Challenge</dt><dd>Present a NASCAR driver as a compelling, measurable investment for corporate partners.</dd></div>
+            <div><dt>What I did</dt><dd>Wrote and designed sponsorship proposals that pair the driver&rsquo;s story with partner value.</dd></div>
+            <div class="result"><dt>Result</dt><dd>A professional, sponsor-ready platform for partner outreach.</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="spread flip reveal">
+        <div class="frame"><img src="img/spotter.jpg" alt="Madison wearing a team headset trackside" loading="lazy" style="object-position:50% 30%"></div>
+        <div class="spread-copy">
+          <p class="eyebrow">Octane Influence</p>
+          <h3>Launching an agency</h3>
+          <dl class="facts">
+            <div><dt>Challenge</dt><dd>Establish a credible motorsports marketing agency from the ground up.</dd></div>
+            <div><dt>What I did</dt><dd>Developed the brand identity, positioning, and content systems, along with client sponsorship frameworks.</dd></div>
+            <div class="result"><dt>Result</dt><dd>A fully realized agency brand, prepared to win and serve motorsports clients.</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <div class="partners reveal" aria-label="Partners and clients">
+        <p class="eyebrow">Partners &amp; Clients</p>
+        <div class="plist"><span>Levy Motorsports</span><span>Sugarlands Distilling Co.</span><span>Full Moon Graphics</span><span>PitLogic</span><span>The Cotton Eyed Joe</span><span>Bubba Brews</span><span>Hooters</span><span>Knoxville Leadership Foundation</span><span>New Hope Counseling Center</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band carbon" id="reel">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><p class="eyebrow">Marketing Reel</p><h2>Race <em>promos.</em></h2></div>
+        <p class="lead">Promotional spots produced to drive ticket sales and attendance. Press play for sound.</p>
+      </div>
+      <div class="reel reveal">
+        <figure><video controls muted playsinline preload="metadata" poster="video/reel-1.jpg"><source src="video/reel-1.mp4" type="video/mp4"></video><figcaption>Promo · 0:14</figcaption></figure>
+        <figure><video controls muted playsinline preload="metadata" poster="video/reel-2.jpg"><source src="video/reel-2.mp4" type="video/mp4"></video><figcaption>Promo · 0:20</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="gallery">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><p class="eyebrow">Gallery</p><h2>From the <em>track.</em></h2></div>
+        <p class="lead">On pit road, in victory lane, in the garage, on the flat track podium, and at brand activations. Select any photo to view it full size.</p>
+      </div>
+      <div class="gallery reveal">
+        <button type="button" class="shot w8 wide-m"><img src="img/pit-stop-sunset.jpg" alt="A pit stop at sunset" loading="lazy" style="object-position:50% 60%"></button>
+        <button type="button" class="shot"><img src="img/wall-dusk.jpg" alt="Madison on the pit wall at dusk" loading="lazy"></button>
+        <button type="button" class="shot"><img src="img/aft-podium.jpg" alt="American Flat Track podium at the DuQuoin Mile" loading="lazy"></button>
+        <button type="button" class="shot"><img src="img/victory-lane.jpg" alt="Victory lane celebration at the Coca-Cola 600" loading="lazy" style="object-position:50% 40%"></button>
+        <button type="button" class="shot"><img src="img/jet-car.jpg" alt="A jet car firing down the front stretch" loading="lazy"></button>
+        <button type="button" class="shot w6"><img src="img/helmet-driver.jpg" alt="A driver waiting beside his helmet on pit road" loading="lazy"></button>
+        <button type="button" class="shot w6"><img src="img/monster-truck.jpg" alt="A monster truck mid-jump under the lights" loading="lazy"></button>
+        <button type="button" class="shot"><img src="img/newport-concessions.jpg" alt="Madison in a Newport Speedway shirt with a headset" loading="lazy" style="object-position:50% 30%"></button>
+        <button type="button" class="shot"><img src="img/aft-board-night.jpg" alt="Madison holding the number board at the DuQuoin Mile" loading="lazy" style="object-position:50% 35%"></button>
+        <button type="button" class="shot"><img src="img/driver-pose.jpg" alt="Madison with a NASCAR driver in a team garage" loading="lazy" style="object-position:50% 30%"></button>
+        <button type="button" class="shot w6"><img src="img/helmet.jpg" alt="Ryan Vargas's helmet resting on the car before a race" loading="lazy"></button>
+        <button type="button" class="shot w6 wide-m"><img src="img/paddock-walk.jpg" alt="Madison walking through the garage area" loading="lazy" style="object-position:50% 30%"></button>
+        <button type="button" class="shot"><img src="img/barstool-stage.jpg" alt="Madison at the Barstool College Football Show set in Knoxville" loading="lazy" style="object-position:50% 35%"></button>
+        <button type="button" class="shot"><img src="img/barstool-portnoy.jpg" alt="Madison and the Barstool Sports staff with Dave Portnoy at Tennessee vs. Florida" loading="lazy" style="object-position:50% 30%"></button>
+        <button type="button" class="shot wide-m"><img src="img/mikes-bristol.jpg" alt="Madison working the Mike&rsquo;s Hard Lemonade activation at Country Thunder, Bristol Motor Speedway" loading="lazy" style="object-position:50% 40%"></button>
+      </div>
+    </div>
+  </section>
+  <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+    <img id="lightbox-img" alt="">
+    <button type="button" class="btn" id="lightbox-close">Close</button>
+  </dialog>
+
+  <section class="band carbon" id="credentials">
+    <div class="wrap split">
+      <div class="reveal">
+        <p class="eyebrow">Toolkit</p>
+        <h3>Platforms I work in</h3>
+        <div class="tools">
+          <span>Canva</span><span>Adobe Illustrator</span><span>CapCut</span><span>Meta Business</span><span>Hootsuite</span><span>Instagram</span><span>TikTok</span><span>Facebook</span><span>X</span><span>Threads</span><span>YouTube</span><span>LinkedIn</span><span>Snapchat</span><span>Pinterest</span><span>Shopify</span><span>Squarespace</span><span>Wix</span><span>Google AdSense</span><span>Microsoft 365</span><span>Claude</span><span>ChatGPT</span><span>Gemini</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <p class="eyebrow">Education &amp; Certifications</p>
+        <h3>Credentials</h3>
+        <div class="edu">
+          <div><b>B.A., Social Work · King University</b><small>Bristol, TN · April 2024 · Provost List · Phi Alpha Honor Society</small></div>
+          <div><b>B.S., Social Work · University of Tennessee</b><small>Knoxville, TN · 2020–2022 · Summa Cum Laude · Alpha Chi Omega</small></div>
+          <div><b>A.A., Social Work · Roane State Community College</b><small>Oak Ridge, TN · 2019–2020</small></div>
+          <div><b>Certifications</b><small>Google Workspace · OSHA 10 · ServSafe · TABC</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band contact" id="contact">
+    <img class="bgimg" src="img/grand-night.jpg" alt="" aria-hidden="true">
+    <div class="wrap">
+      <p class="eyebrow reveal">Contact</p>
+      <h2 class="reveal" style="margin-top:22px">Let&rsquo;s talk about <em>your next race day.</em></h2>
+      <div class="cards">
+        <div class="card"><span class="k">Email</span><output id="c-email">madisonloepp@aol.com</output><button class="btn" type="button" data-copy="c-email">Copy email</button></div>
+        <div class="card"><span class="k">Phone</span><output id="c-phone">(865) 414-4301</output><button class="btn" type="button" data-copy="c-phone">Copy number</button></div>
+        <div class="card"><span class="k">Instagram</span><output id="c-ig">@glittermemadi</output><a class="btn" href="https://www.instagram.com/glittermemadi/" target="_blank" rel="noopener">Open profile</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Madison Loepp</span><span>Knoxville, TN</span><a href="#top">Back to top ↑</a></div>
+</footer>
+
+<script>
+(() => {
+  const nav = document.getElementById('nav');
+  const burger = document.getElementById('burger');
+  const setOpen = (open) => {
+    nav.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  };
+  burger.addEventListener('click', () => setOpen(!nav.classList.contains('open')));
+  document.querySelectorAll('#links a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
+
+  // solid menu after the opener, scroll progress, active section
+  const bar = document.getElementById('progress');
+  const links = [...document.querySelectorAll('#links a')];
+  const sections = links.map(a => document.querySelector(a.getAttribute('href')));
+  const onScroll = () => {
+    const h = document.documentElement;
+    const max = h.scrollHeight - h.clientHeight;
+    nav.classList.toggle('solid', h.scrollTop > 40);
+    bar.style.transform = `scaleX(${max > 0 ? h.scrollTop / max : 0})`;
+    let current = -1;
+    sections.forEach((s, i) => { if (s && s.getBoundingClientRect().top < 160) current = i; });
+    links.forEach((a, i) => a.classList.toggle('on', i === current));
+  };
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // reduced motion: hold the opener on its still frame
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const v = document.querySelector('.hero video'); if (v) { v.removeAttribute('autoplay'); v.pause(); }
+  }
+
+  // entrance: only items below the fold get a gentle lift
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const io = new IntersectionObserver(entries => entries.forEach(en => {
+      if (en.isIntersecting) { en.target.classList.remove('pending'); io.unobserve(en.target); }
+    }), { rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(el => {
+      if (el.getBoundingClientRect().top > innerHeight) { el.classList.add('pending'); io.observe(el); }
+    });
+  }
+
+  // lightbox
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  document.querySelectorAll('.shot').forEach(btn => btn.addEventListener('click', () => {
+    const img = btn.querySelector('img');
+    lbImg.src = img.src; lbImg.alt = img.alt;
+    if (lb.showModal) lb.showModal();
+  }));
+  document.getElementById('lightbox-close').addEventListener('click', () => lb.close());
+  lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
+
+  // copy buttons
+  document.querySelectorAll('[data-copy]').forEach(btn => btn.addEventListener('click', () => {
+    const el = document.getElementById(btn.dataset.copy);
+    const label = btn.textContent;
+    const done = (msg) => { btn.textContent = msg; setTimeout(() => { btn.textContent = label; }, 1600); };
+    const select = () => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); done('Selected'); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(el.textContent.trim()).then(() => done('Copied'), select);
+    } else select();
+  }));
+})();
+</script>
+
+</body>
+</html>
