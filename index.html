@@ -152,6 +152,11 @@ section { scroll-margin-top: 76px; }
 dl { margin: 0; }
 
 /* partners */
+.tickets { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(10px, 1.6vw, 22px); align-items: end; }
+.tickets button { padding: 0; border: 0; background: none; cursor: zoom-in; transition: transform .5s cubic-bezier(.2,.7,.1,1); }
+.tickets button:nth-child(2) { transform: translateY(-18px); }
+.tickets button:hover, .tickets button:focus-visible { transform: translateY(-26px); }
+.tickets img { display: block; width: 100%; aspect-ratio: 638 / 1650; object-fit: cover; box-shadow: 0 24px 50px rgba(0,0,0,.55); }
 .partners { margin-top: clamp(56px, 7vw, 96px); display: grid; gap: 26px; }
 .partners .eyebrow { justify-content: center; }
 .partners .eyebrow::before { display: none; }
@@ -295,6 +300,7 @@ footer a { text-decoration: none; }
         <p class="eyebrow">About</p>
         <h2>Strategy, executed <em>at the track.</em></h2>
         <p>I am a motorsports marketing and public relations professional whose work spans venue leadership, team and driver representation, series activation, and brand development. My experience covers NASCAR, ARCA, NHRA, rally, and short-track racing. As Director of Marketing &amp; PR at Newport Speedway and founder of Octane Influence, I have led a venue revival, built sponsorship pipelines, and developed brand audiences from the ground up.</p>
+        <p>My connection to the sport began long before my career. I grew up next door to dirt late model racers Kyle and Kody Courtney and was involved in their racing careers throughout my childhood, celebrating in victory lane at I-75 Raceway in Sweetwater, Tennessee.</p>
         <p>My academic training in social work, with a degree from King University, informs how I approach fans. It gives me a grounded understanding of community behavior and audience psychology, and of what earns lasting loyalty. That perspective is uncommon in motorsports marketing, and it shapes every program I build.</p>
         <p class="quote">I do not build campaigns. I build belonging.</p>
         <div class="roles" aria-label="Roles I've held">
@@ -452,6 +458,19 @@ footer a { text-decoration: none; }
         </div>
       </article>
 
+      <article class="spread flip reveal">
+        <div class="tickets">
+          <button type="button" class="tk"><img src="img/ticket-kraus.jpg" alt="Collectible admission ticket featuring Derek Kraus for the ZMAX CARS Tour at Newport Speedway" loading="lazy"></button>
+          <button type="button" class="tk"><img src="img/ticket-brown.jpg" alt="Collectible admission ticket featuring Carson Brown for the ZMAX CARS Tour at Newport Speedway" loading="lazy"></button>
+          <button type="button" class="tk"><img src="img/ticket-huffman.jpg" alt="Collectible admission ticket featuring Landon Huffman for the ZMAX CARS Tour at Newport Speedway" loading="lazy"></button>
+        </div>
+        <div class="spread-copy">
+          <p class="eyebrow">Newport Speedway · ZMAX CARS Tour</p>
+          <h3>Collectible <em>driver tickets</em></h3>
+          <p class="lead">I designed a series of collectible admission tickets for the ZMAX CARS Tour&rsquo;s October 3, 2026 event at Newport Speedway. Each ticket features a competing driver: Derek Kraus, Carson Brown, and Landon Huffman.</p>
+        </div>
+      </article>
+
       <div class="partners reveal" aria-label="Brands and organizations">
         <p class="eyebrow">Brands &amp; Organizations I&rsquo;ve Worked With</p>
         <div class="plist"><span>Barstool Sports</span><span>Ron Capps Motorsports</span><span>American Flat Track</span><span>Mike&rsquo;s Hard Lemonade</span><span>Lag Shot Golf</span><span>Levy Motorsports</span><span>Sugarlands Distilling Co.</span><span>Full Moon Graphics</span><span>PitLogic</span><span>The Cotton Eyed Joe</span><span>Bubba Brews</span><span>Hooters</span><span>Knoxville Leadership Foundation</span><span>New Hope Counseling Center</span></div>
@@ -495,12 +514,13 @@ footer a { text-decoration: none; }
         <button type="button" class="shot"><img src="img/barstool-stage.jpg" alt="Madison at the Barstool College Football Show set in Knoxville" loading="lazy" style="object-position:50% 35%"></button>
         <button type="button" class="shot"><img src="img/barstool-portnoy.jpg" alt="Madison and the Barstool Sports staff with Dave Portnoy at Tennessee vs. Florida" loading="lazy" style="object-position:50% 30%"></button>
         <button type="button" class="shot wide-m"><img src="img/mikes-bristol.jpg" alt="Madison working the Mike&rsquo;s Hard Lemonade activation at Country Thunder, Bristol Motor Speedway" loading="lazy" style="object-position:50% 40%"></button>
-        <button type="button" class="shot w8 wide-m"><img src="img/arca-93-side.jpg" alt="The No. 93 ARCA Menards Series car at speed" loading="lazy" style="object-position:50% 55%"></button>
+        <button type="button" class="shot w6 wide-m"><img src="img/arca-93-side.jpg" alt="The No. 93 ARCA Menards Series car at speed" loading="lazy" style="object-position:50% 55%"></button>
+        <button type="button" class="shot w6 wide-m"><img src="img/i75-victory-lane.jpg" alt="Madison in victory lane after a 2022 feature win at I-75 Raceway in Sweetwater, Tennessee" loading="lazy" style="object-position:50% 50%"></button>
         <button type="button" class="shot"><img src="img/newport-victory-lane.jpg" alt="Madison with drivers at the Newport Speedway victory lane sign" loading="lazy" style="object-position:50% 45%"></button>
         <button type="button" class="shot"><img src="img/aft-mission.jpg" alt="An American Flat Track rider on the grid" loading="lazy" style="object-position:40% 40%"></button>
         <button type="button" class="shot"><img src="img/wilson-jacket.jpg" alt="Custom jacket lining on the grid at the Coca-Cola 600" loading="lazy" style="object-position:40% 50%"></button>
         <button type="button" class="shot"><img src="img/aft-monster.jpg" alt="An American Flat Track rider in a Monster Energy helmet" loading="lazy" style="object-position:50% 35%"></button>
-        <button type="button" class="shot w8"><img src="img/arca-93-driver.jpg" alt="An ARCA driver leaning on his car on pit road before the race" loading="lazy" style="object-position:55% 40%"></button>
+        <button type="button" class="shot"><img src="img/arca-93-driver.jpg" alt="An ARCA driver leaning on his car on pit road before the race" loading="lazy" style="object-position:55% 40%"></button>
         <button type="button" class="shot"><img src="img/driver-chat.jpg" alt="Madison talking with a driver on pit road" loading="lazy" style="object-position:50% 35%"></button>
       </div>
     </div>
@@ -597,7 +617,7 @@ footer a { text-decoration: none; }
   // lightbox
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lightbox-img');
-  document.querySelectorAll('.shot').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.shot, .tk').forEach(btn => btn.addEventListener('click', () => {
     const img = btn.querySelector('img');
     lbImg.src = img.src; lbImg.alt = img.alt;
     if (lb.showModal) lb.showModal();
