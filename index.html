@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Madison Loepp | Motorsports Marketing &amp; PR</title>
 <meta name="description" content="Madison Loepp: motorsports marketing and public relations. Director of Marketing &amp; PR at Newport Speedway, based in Knoxville, TN.">
 <meta property="og:title" content="Madison Loepp | Motorsports Marketing &amp; PR">
-<meta property="og:description" content="Marketing, PR, and sponsorship across NASCAR, ARCA, NHRA, USAC, rally, and American Flat Track.">
+<meta property="og:description" content="Madison Loepp: motorsports marketing and public relations. Director of Marketing &amp; PR at Newport Speedway, based in Knoxville, TN.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://madisonloepp.com/">
 <meta property="og:image" content="https://madisonloepp.com/img/pit-stop-sunset.jpg">
 <meta name="theme-color" content="#0c0a0a">
-<title>Madison Loepp | Motorsports Marketing &amp; PR</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Barlow+Condensed:wght@500;600;700;800&family=Archivo:wght@400;500;600&display=swap">
@@ -248,20 +248,51 @@ footer a { text-decoration: none; }
   .stat + .stat { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); }
   .facts div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
 }
+
+/* multi-page: banner for inner pages, section previews on home, next-page rail */
+.page-hero { position: relative; min-height: min(58vh, 560px); display: grid; align-items: end; overflow: hidden; isolation: isolate; }
+.page-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.page-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, var(--black) 0%, color-mix(in srgb, var(--black) 55%, transparent) 55%, color-mix(in srgb, var(--black) 80%, transparent) 100%), linear-gradient(90deg, color-mix(in srgb, var(--oxblood) 55%, transparent), transparent 70%); }
+.page-hero .wrap { width: 100%; padding-block: 150px 56px; display: grid; gap: 18px; }
+.page-hero h1 { font: 400 clamp(3.4rem, 10vw, 8rem)/.92 var(--display); letter-spacing: -.02em; }
+.page-hero h1 b { font-weight: 400; color: var(--red); }
+.page-hero + .band { padding-top: clamp(56px, 7vw, 96px); }
+.explore { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.tile { position: relative; display: grid; align-content: end; gap: 10px; min-height: 420px; padding: 28px; overflow: hidden; isolation: isolate; text-decoration: none; color: var(--cream); background: var(--carbon); }
+.tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform 1.2s cubic-bezier(.2,.7,.1,1); }
+.tile::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, var(--black) 8%, color-mix(in srgb, var(--black) 45%, transparent) 60%, color-mix(in srgb, var(--black) 15%, transparent)); transition: background .4s; }
+.tile .num { font: 700 .8rem/1 var(--cond); letter-spacing: .28em; color: var(--red); }
+.tile h3 { font: 400 clamp(1.9rem, 2.6vw, 2.4rem)/1.05 var(--display); }
+.tile h3 em { font-style: italic; }
+.tile p { margin: 0; font-size: .98rem; line-height: 1.55; color: color-mix(in srgb, var(--cream) 78%, transparent); }
+.tile .go { font: 700 .82rem/1 var(--cond); letter-spacing: .24em; text-transform: uppercase; display: flex; gap: 10px; align-items: center; margin-top: 8px; }
+.tile .go::after { content: "→"; transition: transform .3s; }
+.tile:hover img, .tile:focus-visible img { transform: scale(1.06); }
+.tile:hover .go::after, .tile:focus-visible .go::after { transform: translateX(6px); }
+.tile::before { content: ""; position: absolute; left: 0; bottom: 0; height: 4px; width: 100%; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .4s; }
+.tile:hover::before, .tile:focus-visible::before { transform: scaleX(1); }
+.next { border-top: 1px solid var(--line); background: var(--carbon); }
+.next a { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-block: clamp(40px, 6vw, 72px); text-decoration: none; color: var(--cream); }
+.next small { display: block; font: 700 .8rem/1 var(--cond); letter-spacing: .28em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+.next b { font: 400 clamp(2.2rem, 5vw, 4rem)/1 var(--display); }
+.next .arrow { font-size: clamp(2rem, 4vw, 3rem); transition: transform .3s; }
+.next a:hover .arrow { transform: translateX(10px); }
+@media (max-width: 960px) { .explore { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .explore { grid-template-columns: minmax(0, 1fr); } .tile { min-height: 300px; padding: 22px; } }
 </style>
 </head>
 <body>
 <nav class="nav" id="nav" aria-label="Main">
   <div class="wrap">
-    <a class="mark" href="#top" aria-label="Madison Loepp, back to top">Madison <span>Loepp</span></a>
+    <a class="mark" href="index.html" aria-label="Madison Loepp, home">Madison <span>Loepp</span></a>
     <button class="burger" id="burger" aria-expanded="false" aria-controls="links" aria-label="Open menu"><span></span><span></span><span></span></button>
     <ul class="links" id="links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#reel">Reel</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li class="cta"><a href="#contact">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="reel.html">Reel</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li class="cta"><a href="contact.html">Contact</a></li>
     </ul>
   </div>
   <div class="progress" id="progress"></div>
@@ -276,8 +307,8 @@ footer a { text-decoration: none; }
     <p class="role">Director of Marketing &amp; PR <span>/</span> Newport Speedway</p>
     <p class="lead">Motorsports marketing and communications strategist building audiences, sponsor value, and race-day experiences across NASCAR, ARCA, NHRA, rally, and American Flat Track.</p>
     <div class="actions">
-      <a class="btn red" href="#work">View selected work <span class="arrow">→</span></a>
-      <a class="btn" href="#contact">Get in touch</a>
+      <a class="btn red" href="work.html">View selected work <span class="arrow">→</span></a>
+      <a class="btn" href="contact.html">Get in touch</a>
     </div>
   </div>
   <span class="scroll-cue" aria-hidden="true">Scroll</span>
@@ -293,274 +324,19 @@ footer a { text-decoration: none; }
 </div>
 
 <main>
-  <section class="band" id="about">
-    <div class="wrap about">
-      <div class="frame reveal"><img src="img/pitroad.jpg" alt="Madison on pit road with a team headset and credential" loading="lazy"></div>
-      <div class="about-copy reveal">
-        <p class="eyebrow">About</p>
-        <h2>Strategy, executed <em>at the track.</em></h2>
-        <p>I am a motorsports marketing and public relations professional whose work spans venue leadership, team and driver representation, series activation, and brand development. My experience covers NASCAR, ARCA, NHRA, rally, and short-track racing. As Director of Marketing &amp; PR at Newport Speedway and founder of Octane Influence, I have led a venue revival, built sponsorship pipelines, and developed brand audiences from the ground up.</p>
-        <p>My connection to the sport began long before my career. I grew up next door to dirt late model racers Kyle and Kody Courtney and was involved in their racing careers throughout my childhood, celebrating in victory lane at I-75 Raceway in Sweetwater, Tennessee.</p>
-        <p>My academic training in social work, with a degree from King University, informs how I approach fans. It gives me a grounded understanding of community behavior and audience psychology, and of what earns lasting loyalty. That perspective is uncommon in motorsports marketing, and it shapes every program I build.</p>
-        <p class="quote">I do not build campaigns. I build belonging.</p>
-        <div class="roles" aria-label="Roles I've held">
-          <span>Marketing Director</span><span>PR Director</span><span>Track Promoter</span><span>Field Marketer</span><span>Sponsorship Manager</span><span>Events Director</span><span>Social Media Manager</span><span>Sports Sales</span><span>Talent Agent</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band carbon" id="experience">
+  <section class="band" id="explore">
     <div class="wrap">
       <div class="head reveal">
-        <div><p class="eyebrow">Experience</p><h2>From the grid to the <em>grandstands.</em></h2></div>
-        <p class="lead">Venue, team, agency, driver, series, brand, and media roles, giving me a working view of how every stakeholder in the sport creates value.</p>
+        <div><p class="eyebrow">Explore</p><h2>The full <em>portfolio.</em></h2></div>
+        <p class="lead">Each part of my work has its own page. Start anywhere.</p>
       </div>
-      <div class="timeline">
-        <article class="job reveal">
-          <span class="kind">Track</span>
-          <h3>Director of Marketing &amp; PR<small>Newport Speedway · Newport, TN</small></h3>
-          <ul>
-            <li>Directed the marketing and communications strategy for the track&rsquo;s return after seven dormant years and a full junkyard cleanup, building to sold-out events</li>
-            <li>Led public relations for the ASA STARS National Tour event, featuring NASCAR champion Kevin Harvick as grand marshal</li>
-            <li>Developed and secured sponsorship partnerships across multiple racing divisions</li>
-          </ul>
-        </article>
-        <article class="job reveal">
-          <span class="kind">Agency</span>
-          <h3>Founder<small>Octane Influence</small></h3>
-          <ul>
-            <li>Founded a motorsports marketing agency and built its brand identity, positioning, and content systems</li>
-            <li>Designed sponsorship and content frameworks tailored to motorsports clients</li>
-          </ul>
-        </article>
-        <article class="job reveal">
-          <span class="kind">Driver</span>
-          <h3>Driver Marketing<small>Chad Finchum · NASCAR</small></h3>
-          <ul>
-            <li>Developed sponsorship proposals and pitch materials to support corporate partner acquisition</li>
-          </ul>
-        </article>
-        <article class="job reveal">
-          <span class="kind">Rider</span>
-          <h3>Social Media Content<small>Jared Mees · American Flat Track · Ongoing</small></h3>
-          <ul>
-            <li>Create ongoing social media content for nine-time American Flat Track Grand National Champion Jared Mees, building his digital presence with fans and partners</li>
-          </ul>
-        </article>
-        <article class="job reveal">
-          <span class="kind">Crown Jewel</span>
-          <h3>Coca-Cola 600<small>With William Wilson · NASCAR Cup Series · Charlotte Motor Speedway</small></h3>
-          <ul>
-            <li>Partnered with William Wilson, designer of the custom jackets presented to race winners, at NASCAR&rsquo;s longest race</li>
-            <li>Supported race day activities and victory lane preparations, and produced media and content, including in The Speedway Club at Charlotte Motor Speedway</li>
-          </ul>
-        </article>
-        <article class="job reveal">
-          <span class="kind">Team</span>
-          <h3>Field Marketer<small>Ron Capps Motorsports · NHRA · Contract</small></h3>
-          <ul>
-            <li>Represented the NHRA Funny Car team in a contracted field marketing role, engaging fans and partners at the track</li>
-          </ul>
-        </article>
-        <article class="job reveal">
-          <span class="kind">Series</span>
-          <h3>Track Promoter &amp; Brand Representative<small>American Flat Track · DuQuoin Mile</small></h3>
-          <ul>
-            <li>Represented the series and its partner brands on track and on the podium</li>
-            <li>Executed trophy ceremonies, the pole award presentation, and on-track number board operations</li>
-          </ul>
-        </article>
-        <article class="job reveal">
-          <span class="kind">Brand</span>
-          <h3>Brand Representative<small>Lag Shot Golf · PGA Show</small></h3>
-          <ul>
-            <li>Led live product demonstrations for buyers, media, and attendees at golf&rsquo;s largest industry trade show</li>
-            <li>Supported trade show activations and booth engagement on behalf of the brand</li>
-          </ul>
-        </article>
-        <article class="job reveal">
-          <span class="kind">Media</span>
-          <h3>Activations &amp; Marketing<small>Barstool Sports · Barstool College Football Show · Tennessee vs. Florida</small></h3>
-          <ul>
-            <li>Ran and supported on-site activations and marketing alongside Dave Portnoy and the Barstool Sports team</li>
-            <li>Delivered fan engagement at a live national broadcast for one of college football&rsquo;s biggest rivalry games</li>
-          </ul>
-        </article>
-        <article class="job reveal">
-          <span class="kind">Activation</span>
-          <h3>Brand Activation<small>Mike&rsquo;s Hard Lemonade · Country Thunder · Bristol Motor Speedway</small></h3>
-          <ul>
-            <li>Staffed the brand&rsquo;s on-site activation at a major country music festival hosted at Bristol Motor Speedway</li>
-            <li>Engaged festival guests and drove product awareness for Mike&rsquo;s Hard Lemonade Seltzer</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="band" id="work">
-    <div class="wrap">
-      <div class="head reveal">
-        <div><p class="eyebrow">Selected Work</p><h2>Case <em>studies.</em></h2></div>
-        <p class="lead">Each project is framed by the challenge, my approach, and the outcome.</p>
-      </div>
-
-      <article class="spread reveal">
-        <div class="frame"><img src="img/newport-crowd.jpg" alt="Packed grandstands at Newport Speedway on race day" loading="lazy" style="object-position:30% 50%"></div>
-        <div class="spread-copy">
-          <p class="eyebrow">Newport Speedway</p>
-          <h3>From junkyard to <em>sold out</em></h3>
-          <dl class="facts">
-            <div><dt>Challenge</dt><dd>Newport Speedway, a 3/10-mile oval with 26-degree banking, had been dormant since its final race in November 2017. When new ownership acquired the property in 2024, crews had to remove hundreds of tons of scrap vehicles and metal from what had become a junkyard before racing could resume. The task was to restore East Tennessee&rsquo;s confidence in the venue.</dd></div>
-            <div><dt>What I did</dt><dd>Directed the relaunch marketing and communications strategy and built a sponsorship program spanning multiple divisions.</dd></div>
-            <div class="result"><dt>Result</dt><dd>Sold-out events at a venue that had sat dormant for seven years.</dd></div>
-          </dl>
-        </div>
-      </article>
-
-      <article class="spread flip reveal">
-        <div class="frame contain"><img class="bg" src="img/asa-stars-graphic.jpg" alt="" aria-hidden="true"><img class="fg" src="img/asa-stars-graphic.jpg" alt="ASA STARS National Tour July 25th race graphic for Newport Speedway, designed by Madison" loading="lazy"></div>
-        <div class="spread-copy">
-          <p class="eyebrow">ASA STARS National Tour</p>
-          <h3>A national tour comes to Newport</h3>
-          <dl class="facts">
-            <div><dt>Challenge</dt><dd>Position a national touring series date as the premier event of the season.</dd></div>
-            <div><dt>What I did</dt><dd>Led event public relations with NASCAR champion Kevin Harvick as grand marshal, and designed the event creative shown here.</dd></div>
-            <div class="result"><dt>Result</dt><dd>National attention and a marquee name for a regional short track.</dd></div>
-          </dl>
-        </div>
-      </article>
-
-      <article class="spread reveal">
-        <div class="frame"><img src="img/driver-entry.jpg" alt="A driver climbing into his car before a race" loading="lazy"></div>
-        <div class="spread-copy">
-          <p class="eyebrow">Chad Finchum · NASCAR</p>
-          <h3>Sponsorship strategy</h3>
-          <dl class="facts">
-            <div><dt>Challenge</dt><dd>Present a NASCAR driver as a compelling, measurable investment for corporate partners.</dd></div>
-            <div><dt>What I did</dt><dd>Wrote and designed sponsorship proposals that pair the driver&rsquo;s story with partner value.</dd></div>
-            <div class="result"><dt>Result</dt><dd>A professional, sponsor-ready platform for partner outreach.</dd></div>
-          </dl>
-        </div>
-      </article>
-
-      <article class="spread flip reveal">
-        <div class="frame"><img src="img/spotter.jpg" alt="Madison wearing a team headset trackside" loading="lazy" style="object-position:50% 30%"></div>
-        <div class="spread-copy">
-          <p class="eyebrow">Octane Influence</p>
-          <h3>Launching an agency</h3>
-          <dl class="facts">
-            <div><dt>Challenge</dt><dd>Establish a credible motorsports marketing agency from the ground up.</dd></div>
-            <div><dt>What I did</dt><dd>Developed the brand identity, positioning, and content systems, along with client sponsorship frameworks.</dd></div>
-            <div class="result"><dt>Result</dt><dd>A fully realized agency brand, prepared to win and serve motorsports clients.</dd></div>
-          </dl>
-        </div>
-      </article>
-
-      <article class="spread flip reveal">
-        <div class="tickets">
-          <button type="button" class="tk"><img src="img/ticket-kraus.jpg" alt="Collectible admission ticket featuring Derek Kraus for the ZMAX CARS Tour at Newport Speedway" loading="lazy"></button>
-          <button type="button" class="tk"><img src="img/ticket-brown.jpg" alt="Collectible admission ticket featuring Carson Brown for the ZMAX CARS Tour at Newport Speedway" loading="lazy"></button>
-          <button type="button" class="tk"><img src="img/ticket-huffman.jpg" alt="Collectible admission ticket featuring Landon Huffman for the ZMAX CARS Tour at Newport Speedway" loading="lazy"></button>
-        </div>
-        <div class="spread-copy">
-          <p class="eyebrow">Newport Speedway · ZMAX CARS Tour</p>
-          <h3>Collectible <em>driver tickets</em></h3>
-          <p class="lead">I designed a series of collectible admission tickets for the ZMAX CARS Tour&rsquo;s October 3, 2026 event at Newport Speedway. Each ticket features a competing driver: Derek Kraus, Carson Brown, and Landon Huffman.</p>
-        </div>
-      </article>
-
-      <div class="partners reveal" aria-label="Brands and organizations">
-        <p class="eyebrow">Brands &amp; Organizations I&rsquo;ve Worked With</p>
-        <div class="plist"><span>Barstool Sports</span><span>Ron Capps Motorsports</span><span>American Flat Track</span><span>Mike&rsquo;s Hard Lemonade</span><span>Lag Shot Golf</span><span>Levy Motorsports</span><span>Sugarlands Distilling Co.</span><span>Full Moon Graphics</span><span>PitLogic</span><span>The Cotton Eyed Joe</span><span>Bubba Brews</span><span>Hooters</span><span>Knoxville Leadership Foundation</span><span>New Hope Counseling Center</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band carbon" id="reel">
-    <div class="wrap">
-      <div class="head reveal">
-        <div><p class="eyebrow">Marketing Reel</p><h2>Race <em>promos.</em></h2></div>
-        <p class="lead">Promotional spots and social content produced to drive ticket sales, attendance, and engagement. Press play for sound.</p>
-      </div>
-      <div class="reel reveal">
-        <figure><video controls muted playsinline preload="metadata" poster="video/reel-1.jpg"><source src="video/reel-1.mp4" type="video/mp4"></video><figcaption>Promo · 0:14</figcaption></figure>
-        <figure><video controls muted playsinline preload="metadata" poster="video/reel-2.jpg"><source src="video/reel-2.mp4" type="video/mp4"></video><figcaption>Promo · 0:20</figcaption></figure>
-        <figure class="vert"><video controls muted playsinline preload="metadata" poster="video/reel-3.jpg"><source src="video/reel-3.mp4" type="video/mp4"></video><figcaption>Social · 0:11</figcaption></figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="band" id="gallery">
-    <div class="wrap">
-      <div class="head reveal">
-        <div><p class="eyebrow">Gallery</p><h2>From the <em>track.</em></h2></div>
-        <p class="lead">On pit road, in victory lane, in the garage, on the flat track podium, and at brand activations. Select any photo to view it full size.</p>
-      </div>
-      <div class="gallery reveal">
-        <button type="button" class="shot w8 wide-m"><img src="img/pit-stop-sunset.jpg" alt="A pit stop at sunset" loading="lazy" style="object-position:50% 60%"></button>
-        <button type="button" class="shot"><img src="img/wall-dusk.jpg" alt="Madison on the pit wall at dusk" loading="lazy"></button>
-        <button type="button" class="shot"><img src="img/aft-podium.jpg" alt="American Flat Track podium at the DuQuoin Mile" loading="lazy"></button>
-        <button type="button" class="shot"><img src="img/victory-lane.jpg" alt="Victory lane celebration at the Coca-Cola 600" loading="lazy" style="object-position:50% 40%"></button>
-        <button type="button" class="shot"><img src="img/jet-car.jpg" alt="A jet car firing down the front stretch" loading="lazy"></button>
-        <button type="button" class="shot w6"><img src="img/helmet-driver.jpg" alt="A driver waiting beside his helmet on pit road" loading="lazy"></button>
-        <button type="button" class="shot w6"><img src="img/monster-truck.jpg" alt="A monster truck mid-jump under the lights" loading="lazy"></button>
-        <button type="button" class="shot"><img src="img/newport-concessions.jpg" alt="Madison in a Newport Speedway shirt with a headset" loading="lazy" style="object-position:50% 30%"></button>
-        <button type="button" class="shot"><img src="img/aft-board-night.jpg" alt="Madison holding the number board at the DuQuoin Mile" loading="lazy" style="object-position:50% 35%"></button>
-        <button type="button" class="shot"><img src="img/driver-pose.jpg" alt="Madison with a NASCAR driver in a team garage" loading="lazy" style="object-position:50% 30%"></button>
-        <button type="button" class="shot w6"><img src="img/paddock-walk.jpg" alt="Madison walking through the garage area" loading="lazy" style="object-position:50% 30%"></button>
-        <button type="button" class="shot w6 wide-m"><img src="img/dirt-late-model.jpg" alt="A dirt late model sliding through the turn at night" loading="lazy" style="object-position:50% 50%"></button>
-        <button type="button" class="shot"><img src="img/barstool-stage.jpg" alt="Madison at the Barstool College Football Show set in Knoxville" loading="lazy" style="object-position:50% 35%"></button>
-        <button type="button" class="shot"><img src="img/barstool-portnoy.jpg" alt="Madison and the Barstool Sports staff with Dave Portnoy at Tennessee vs. Florida" loading="lazy" style="object-position:50% 30%"></button>
-        <button type="button" class="shot wide-m"><img src="img/mikes-bristol.jpg" alt="Madison working the Mike&rsquo;s Hard Lemonade activation at Country Thunder, Bristol Motor Speedway" loading="lazy" style="object-position:50% 40%"></button>
-        <button type="button" class="shot w6 wide-m"><img src="img/arca-93-side.jpg" alt="The No. 93 ARCA Menards Series car at speed" loading="lazy" style="object-position:50% 55%"></button>
-        <button type="button" class="shot w6 wide-m"><img src="img/i75-victory-lane.jpg" alt="Madison in victory lane after a 2022 feature win at I-75 Raceway in Sweetwater, Tennessee" loading="lazy" style="object-position:50% 50%"></button>
-        <button type="button" class="shot"><img src="img/newport-victory-lane.jpg" alt="Madison with drivers at the Newport Speedway victory lane sign" loading="lazy" style="object-position:50% 45%"></button>
-        <button type="button" class="shot"><img src="img/aft-mission.jpg" alt="An American Flat Track rider on the grid" loading="lazy" style="object-position:40% 40%"></button>
-        <button type="button" class="shot"><img src="img/wilson-jacket.jpg" alt="Custom jacket lining on the grid at the Coca-Cola 600" loading="lazy" style="object-position:40% 50%"></button>
-        <button type="button" class="shot"><img src="img/aft-monster.jpg" alt="An American Flat Track rider in a Monster Energy helmet" loading="lazy" style="object-position:50% 35%"></button>
-        <button type="button" class="shot"><img src="img/arca-93-driver.jpg" alt="An ARCA driver leaning on his car on pit road before the race" loading="lazy" style="object-position:55% 40%"></button>
-        <button type="button" class="shot"><img src="img/driver-chat.jpg" alt="Madison talking with a driver on pit road" loading="lazy" style="object-position:50% 35%"></button>
-      </div>
-    </div>
-  </section>
-  <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
-    <img id="lightbox-img" alt="">
-    <button type="button" class="btn" id="lightbox-close">Close</button>
-  </dialog>
-
-  <section class="band carbon" id="credentials">
-    <div class="wrap split">
-      <div class="reveal">
-        <p class="eyebrow">Toolkit</p>
-        <h3>Platforms I work in</h3>
-        <div class="tools">
-          <span>Canva</span><span>Adobe Illustrator</span><span>CapCut</span><span>Meta Business</span><span>Hootsuite</span><span>Instagram</span><span>TikTok</span><span>Facebook</span><span>X</span><span>Threads</span><span>YouTube</span><span>LinkedIn</span><span>Snapchat</span><span>Pinterest</span><span>Shopify</span><span>Squarespace</span><span>Wix</span><span>Google AdSense</span><span>Microsoft 365</span><span>Claude</span><span>ChatGPT</span><span>Gemini</span>
-        </div>
-      </div>
-      <div class="reveal">
-        <p class="eyebrow">Education &amp; Certifications</p>
-        <h3>Credentials</h3>
-        <div class="edu">
-          <div><b>B.A., Social Work · King University</b><small>Bristol, TN · April 2024 · Provost List · Phi Alpha Honor Society</small></div>
-          <div><b>Social Work Coursework · University of Tennessee</b><small>Knoxville, TN · 2020–2022 · Summa Cum Laude (semester honors) · Alpha Chi Omega</small></div>
-          <div><b>A.A., Social Work · Roane State Community College</b><small>Oak Ridge, TN · 2019–2020</small></div>
-          <div><b>Certifications</b><small>Google Workspace · OSHA 10 · ServSafe · TABC</small></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band contact" id="contact">
-    <img class="bgimg" src="img/grand-night.jpg" alt="" aria-hidden="true">
-    <div class="wrap">
-      <p class="eyebrow reveal">Contact</p>
-      <h2 class="reveal" style="margin-top:22px">Let&rsquo;s talk about <em>your next race day.</em></h2>
-      <div class="cards">
-        <div class="card"><span class="k">Email</span><output id="c-email">madisonloepp@aol.com</output><button class="btn" type="button" data-copy="c-email">Copy email</button></div>
-        <div class="card"><span class="k">Phone</span><output id="c-phone">(865) 414-4301</output><button class="btn" type="button" data-copy="c-phone">Copy number</button></div>
-        <div class="card"><span class="k">Instagram</span><output id="c-ig">@glittermemadi</output><a class="btn" href="https://www.instagram.com/glittermemadi/" target="_blank" rel="noopener">Open profile</a></div>
+      <div class="explore reveal">
+      <a class="tile" href="about.html"><img src="img/pitroad.jpg" alt="" loading="lazy" style="object-position:50% 30%"><span class="num">01</span><h3>Strategy, executed <em>at the track.</em></h3><p>Background, approach, and the credentials behind the work.</p><span class="go">About</span></a>
+      <a class="tile" href="experience.html"><img src="img/victory-lane.jpg" alt="" loading="lazy" style="object-position:50% 40%"><span class="num">02</span><h3>From the grid to the <em>grandstands.</em></h3><p>Venue leadership, team and driver marketing, and series activation.</p><span class="go">Experience</span></a>
+      <a class="tile" href="work.html"><img src="img/newport-crowd.jpg" alt="" loading="lazy" style="object-position:30% 50%"><span class="num">03</span><h3>Case <em>studies.</em></h3><p>The challenge, the approach, and the outcome, plus original design work.</p><span class="go">Work</span></a>
+      <a class="tile" href="reel.html"><img src="video/reel-1.jpg" alt="" loading="lazy" style="object-position:50% 50%"><span class="num">04</span><h3>Race <em>promos.</em></h3><p>Promotional spots and social content built to sell tickets.</p><span class="go">Reel</span></a>
+      <a class="tile" href="gallery.html"><img src="img/helmet-driver.jpg" alt="" loading="lazy" style="object-position:50% 40%"><span class="num">05</span><h3>From the <em>track.</em></h3><p>Race days, victory lanes, and activations across the sport.</p><span class="go">Gallery</span></a>
+      <a class="tile" href="contact.html"><img src="img/newport-victory-lane.jpg" alt="" loading="lazy" style="object-position:50% 45%"><span class="num">06</span><h3>Your next <em>race day.</em></h3><p>Email, phone, and Instagram.</p><span class="go">Contact</span></a>
       </div>
     </div>
   </section>
@@ -585,16 +361,11 @@ footer a { text-decoration: none; }
 
   // solid menu after the opener, scroll progress, active section
   const bar = document.getElementById('progress');
-  const links = [...document.querySelectorAll('#links a')];
-  const sections = links.map(a => document.querySelector(a.getAttribute('href')));
   const onScroll = () => {
     const h = document.documentElement;
     const max = h.scrollHeight - h.clientHeight;
     nav.classList.toggle('solid', h.scrollTop > 40);
     bar.style.transform = `scaleX(${max > 0 ? h.scrollTop / max : 0})`;
-    let current = -1;
-    sections.forEach((s, i) => { if (s && s.getBoundingClientRect().top < 160) current = i; });
-    links.forEach((a, i) => a.classList.toggle('on', i === current));
   };
   addEventListener('scroll', onScroll, { passive: true });
   onScroll();
@@ -616,6 +387,7 @@ footer a { text-decoration: none; }
 
   // lightbox
   const lb = document.getElementById('lightbox');
+  if (lb) {
   const lbImg = document.getElementById('lightbox-img');
   document.querySelectorAll('.shot, .tk').forEach(btn => btn.addEventListener('click', () => {
     const img = btn.querySelector('img');
@@ -624,6 +396,7 @@ footer a { text-decoration: none; }
   }));
   document.getElementById('lightbox-close').addEventListener('click', () => lb.close());
   lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
+  }
 
   // copy buttons
   document.querySelectorAll('[data-copy]').forEach(btn => btn.addEventListener('click', () => {
@@ -637,6 +410,5 @@ footer a { text-decoration: none; }
   }));
 })();
 </script>
-
 </body>
 </html>
